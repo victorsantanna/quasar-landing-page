@@ -23,8 +23,8 @@
           <div v-if="imc !== null" class="q-col" style="padding: 20px;">
             <div >
               <h3>Resultado do IMC</h3>
-              <p>Seu IMC é: {{ imc.toFixed(2) }}</p>
-              <p class="flex flex-center">{{ classificacaoIMC }}</p>
+              <h5 class="flex flex-center">Seu IMC é: {{ imc.toFixed(2) }}</h5>
+              <h5 class="flex flex-center text-negative text-bold">{{ classificacaoIMC }}</h5>
             </div>
           </div>
         </div>
@@ -69,11 +69,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .q-col {
 
-  border: 1px solid #ccc;
+  border: 2px solid #e9dbce;
   border-radius: 5px;
+  margin: 3px;
+
 }
 
 .q-page-centered {
