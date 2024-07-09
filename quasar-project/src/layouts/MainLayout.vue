@@ -1,43 +1,36 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+    <q-header elevated class="bg-secondary text-white flex flex-center" shadow-2 style="height: 80px;">
+      <q-toolbar >
 
-        <q-toolbar-title>
-          Quasar App
+
+        <q-toolbar-title class="text-white" style="margin-left: 60px; ">
+          <q-avatar>
+            <img src="../assets/img/logo-quasar-projeto.png" alt="Logo Projeto" style="filter: invert(100%); width: 60px">
+          </q-avatar >
+          <router-link to="/" style="text-decoration: none;" class="text-white" >
+            Nutricionista Luiza Souza
+          </router-link>
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <q-tabs  shrink  >
+          <router-link to="/" style="text-decoration: none;">
+            <q-tab class="text-white" name="Home" label="Home"></q-tab>
+          </router-link>
+          <router-link to="/portfolionutri" style="text-decoration: none;">
+            <q-tab class="text-white" name="tab1" label="PortFolio"></q-tab>
+          </router-link>
+          <router-link to="/testeimc" style="text-decoration: none;">
+            <q-tab name="tab2"  class="text-white" label="Teste IMC" ></q-tab>
+          </router-link>
+          <router-link to="/contato" style="text-decoration: none;">
+            <q-tab name="tab3"  class="text-white" label="Contato"></q-tab>
+          </router-link>
+        </q-tabs>
+
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -47,71 +40,12 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
 
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
+
+
 
 export default defineComponent({
   name: 'MainLayout',
 
-  components: {
-    EssentialLink
-  },
-
-  data () {
-    return {
-      linksList,
-      leftDrawerOpen: false
-    }
-  },
-
-  methods: {
-    toggleLeftDrawer () {
-      this.leftDrawerOpen = !this.leftDrawerOpen
-    }
-  }
 })
 </script>
