@@ -23,7 +23,9 @@
           <router-link to="/testeimc" style="text-decoration: none;">
             <q-tab name="tab2"  class="text-white" label="Teste IMC" ></q-tab>
           </router-link>
-          <q-tab name="tab3"  class="text-white" label="Contato"></q-tab>
+          <router-link to="/contato" style="text-decoration: none;">
+            <q-tab name="tab3"  class="text-white" label="Contato"></q-tab>
+          </router-link>
         </q-tabs>
 
       </q-toolbar>
