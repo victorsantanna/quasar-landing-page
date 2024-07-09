@@ -1,5 +1,8 @@
 # Quasar Projeto - Landing page para Profissional de Nutrição.
 
+## Preview da Imagem
+![Preview da Landing Page](https://github.com/victorsantanna/quasar-landing-page/blob/main/quasar-project/src/assets/img/preview-landing-pages.png)
+
 ## Visão Geral
 Este projeto é uma aplicação de landing pages para uma nutricionista, desenvolvido com Vue.js 3 e Quasar Framework. A aplicação inclui páginas de Home, Portfólio e Contato, oferecendo uma navegação suave e eficiente através de uma SPA (Single Page Application).
 
