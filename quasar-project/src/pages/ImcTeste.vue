@@ -1,6 +1,6 @@
 <template>
   <q-page class="q-page-centered">
-    <q-page-container>
+
       <div class="q-gutter-md">
         <div class="q-col-gutter-md" style="display: flex;">
           <!-- Calculadora de IMC -->
@@ -20,16 +20,15 @@
           </div>
 
           <!-- Resultado do IMC -->
-          <div v-if="imc !== null" class="q-col" style="padding: 20px;">
+          <div v-if="imc !== null" class="q-col" style="padding: 30px;">
             <div >
               <h3>Resultado do IMC</h3>
               <h5 class="flex flex-center">Seu IMC é: {{ imc.toFixed(2) }}</h5>
-              <h5 class="flex flex-center text-negative text-bold">{{ classificacaoIMC }}</h5>
+              <h4 class="flex flex-center text-bold"  :class="classificacaoClass">{{ classificacaoIMC }}</h4>
             </div>
           </div>
         </div>
-      </div>
-    </q-page-container>
+      </div>  
   </q-page>
 </template>
 
@@ -64,6 +63,19 @@ export default {
       } else {
         return 'Obesidade';
       }
+    },
+    classificacaoClass() {
+      switch (this.classificacaoIMC) {
+        case 'Peso normal':
+          return 'text-positive'; // #26A69A
+        case 'Obesidade':
+        case 'Abaixo do peso':
+          return 'text-negative'; // #C10015
+        case 'Sobrepeso':
+          return 'text-warning'; // #F2C037
+        default:
+          return '';
+      }
     }
   }
 }
@@ -83,5 +95,16 @@ export default {
   justify-content: center;
   align-items: center;
 
+}
+.text-positive {
+  color: #26A69A;
+}
+
+.text-negative {
+  color: #C10015; /* Abaixo do peso e Obesidade */
+}
+
+.text-warning {
+  color: #F2C037; /* Sobrepeso */
 }
 </style>
