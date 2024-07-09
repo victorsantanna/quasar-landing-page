@@ -13,7 +13,7 @@
           </router-link>
         </q-toolbar-title>
 
-        <q-tabs  shrink  >
+        <q-tabs  shrink  v-model="activeTab">
           <router-link to="/" style="text-decoration: none;">
             <q-tab class="text-white" name="Home" label="Home"></q-tab>
           </router-link>
@@ -46,6 +46,10 @@ import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   name: 'MainLayout',
-
+  data() {
+    return {
+      activeTab: 'Home' // Define 'Home' como o tab inicialmente ativo
+    };
+  }
 })
 </script>
