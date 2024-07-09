@@ -4,7 +4,7 @@
       <div class="q-gutter-md">
         <div class="q-col-gutter-md" style="display: flex;">
           <!-- Calculadora de IMC -->
-          <div class="q-col" style="padding: 20px;">
+          <div class="q-col " style="padding: 30px;">
             <h3>Calculadora de IMC</h3>
             <div class="q-gutter-sm">
               <div class="q-field">
