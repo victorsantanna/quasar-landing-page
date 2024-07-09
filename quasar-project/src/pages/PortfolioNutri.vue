@@ -1,18 +1,22 @@
 <template>
-  <div class="cards-wrapper">
-    <div v-for="(card) in cards" :key="card.id" class="card-container">
-      <q-card class="my-card">
-        <q-img :src="card.imagem" class="card-image">
-          <div class="absolute-bottom text-h6 text-white">
-            {{ card.titulo }}
-          </div>
-        </q-img>
-        <q-card-section>
-          {{ card.descricao }}
-        </q-card-section>
-      </q-card>
+  <q-page>
+
+    <div class="cards-wrapper">
+      <div v-for="(card) in cards" :key="card.id" class="card-container">
+        <q-card class="my-card">
+          <q-img :src="card.imagem" class="card-image">
+            <div class="absolute-bottom text-h6 text-white">
+              {{ card.titulo }}
+            </div>
+          </q-img>
+          <q-card-section>
+            {{ card.descricao }}
+          </q-card-section>
+        </q-card>
+      </div>
     </div>
-  </div>
+
+  </q-page>
 </template>
 
 <script>
@@ -24,35 +28,35 @@ export default {
           id: 1,
           titulo: "Laura Marques",
           descricao:
-            "A Dra. Luiza Souza me ajudou a transformar minha alimentação e melhorar minha saúde em apenas três meses!",
+            "A nutri Luiza Souza me ajudou a transformar minha alimentação e melhorar minha saúde em apenas três meses!",
           imagem: "",
         },
         {
           id: 2,
           titulo: "Joana Lima",
           descricao:
-            "Com a orientação da Dra. Luiza, consegui atingir meu peso ideal de maneira saudável e sustentável!",
+            "Com a orientação da Nutri Luiza, consegui atingir meu peso ideal de maneira saudável e sustentável!",
           imagem: "",
         },
         {
           id: 3,
           titulo: "Thaís Oliveira",
           descricao:
-            "A Dra. Luiza é incrível! Suas dicas são práticas e realmente funcionam no dia a dia!",
+            "A nutri Luiza é incrível! Suas dicas são práticas e realmente funcionam no dia a dia!",
           imagem: "",
         },
         {
           id: 4,
           titulo: "Nayara da Silva",
           descricao:
-            "Recomendo a Dra. Luiza para todos que desejam uma mudança positiva na alimentação e saúde!",
+            "Recomendo a nutri Luiza para todos que desejam uma mudança positiva na alimentação e saúde!",
           imagem: "",
         },
       ],
     };
   },
   created() {
-    // Carregar imagens dinamicamente usando import.meta.url
+
     this.cards.forEach((card, index) => {
       switch (index % 4) {
         case 0:
@@ -68,7 +72,7 @@ export default {
           card.imagem = new URL("../assets/img/foto4.png", import.meta.url).href;
           break;
         default:
-          card.imagem = ""; // Caso haja mais cards do que imagens, isso garante que a imagem será vazia
+          card.imagem = "";
       }
     });
   },
@@ -84,7 +88,7 @@ export default {
 
 .my-card {
   width: 250px; /* Definindo largura fixa */
-  height: 450px; /* Definindo altura fixa */
+  height: 420px; /* Definindo altura fixa */
 }
 
 .card-container {
